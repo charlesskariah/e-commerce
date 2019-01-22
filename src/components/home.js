@@ -6,18 +6,18 @@ class Home extends Component {
    constructor(){
        super()
        this.state = {
-            products: products
+            products: products,
+            cartCount: localStorage.getItem('products')  === null ? 0 : localStorage.getItem('products').length,
        }
    }
-
+   
    render(){
        return(
            <div className="container">
-             <Navbar />
-             <br />
-             <div class="card-deck">
-                {this.state.products.map(product => <Container product={product} key={product.id}/> )}
-             </div>
+             <Navbar itemCount={this.state.cartCount}/>
+               <div className="card-deck">
+                  {this.state.products.map(product => <Container product={product} key={product.id}/> )}
+                </div>
            </div>  
        )
    }

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-function Navbar(){
+function Navbar(props){
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a className="navbar-brand" href="#">Products Zone</a>
@@ -8,18 +8,20 @@ function Navbar(){
         <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav">
-            <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link" href="#">Products</a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
+          <ul className="navbar-nav">
+              <li className="nav-item active">
+              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+              <a className="nav-link" href="/">Products</a>
+              </li>
+          </ul>
+        </div>
+        <ul className="navbar-nav pull-right">
+            <li className="nav-item ">
+            <a className="nav-link" href="/checkout">Checkout({props.itemCount})</a>
             </li>
         </ul>
-        </div>
     </nav>
   )
 

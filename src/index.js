@@ -6,6 +6,7 @@ import App from './App';
 import Details from './details';
 import Checkout from './checkout';
 import Notfound from './notfound'
+import Thankyou from './thankyou'
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -15,6 +16,7 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route path="/details/:id" component={Details} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/thankyou" component={Thankyou}/>
         <Route component={Notfound} />
       </Switch>
       </div>
