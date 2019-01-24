@@ -41,11 +41,13 @@ class Details extends Component {
         this.setState((prevState) => {
             return {
                 favouritedProducts: localStorage.getItem('favouritedProducts') != null ? localStorage.getItem('favouritedProducts').split('').map(Number) : [],
-                cartProducts: localStorage.getItem('products') != null ? localStorage.getItem('products').split('').map(Number) : []
+                cartProducts: localStorage.getItem('products') != null ? localStorage.getItem('products').split('').map(Number) : [],
+                cartCount: localStorage.getItem('products')  === null ? 0 : localStorage.getItem('products').length
             }
             
         });
     }
+    
     decreaseQuantity = event => {
       let unitPrice = event.currentTarget.dataset.price
       this.setState((prevState) => {
